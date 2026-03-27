@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/yunluo
-KERNEL_PATH := device/xiaomi/yunluo-kernel
+DEVICE_PATH := device/xiaomi/taiko
+KERNEL_PATH := device/xiaomi/taiko-kernel
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 # Architecture
@@ -31,10 +31,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # OTA Updates
-TARGET_OTA_ASSERT_DEVICE := yunluo
+TARGET_OTA_ASSERT_DEVICE := taiko
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := yunluo
+TARGET_BOOTLOADER_BOARD_NAME := taiko
 TARGET_NO_BOOTLOADER := true
 
 # Plaform
@@ -68,7 +68,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_NO_KERNEL_OVERRIDE := true
 
 # Workaround to make lineage's soong generator work
-TARGET_KERNEL_SOURCE := device/xiaomi/yunluo-kernel/kernel-headers
+TARGET_KERNEL_SOURCE := device/xiaomi/taiko-kernel/kernel-headers
 
 LOCAL_KERNEL := $(KERNEL_PATH)/Image.gz
 PRODUCT_COPY_FILES += \
@@ -197,4 +197,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit the proprietary version
-include vendor/xiaomi/yunluo/BoardConfigVendor.mk
+include vendor/xiaomi/taiko/BoardConfigVendor.mk

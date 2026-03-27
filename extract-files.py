@@ -20,7 +20,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    "device/xiaomi/yunluo",
+    "device/xiaomi/taiko",
     "hardware/mediatek",
     "hardware/mediatek/libmtkperf_client",
     "hardware/lineage/compat"
@@ -121,7 +121,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    "yunluo",
+    "taiko",
     "xiaomi",
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

@@ -1,1 +1,1 @@
-# Device tree for the Redmi Pad (yunluo)
+# Device tree for the Redmi Pad 2 (taiko)

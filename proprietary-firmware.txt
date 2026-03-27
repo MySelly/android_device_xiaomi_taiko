@@ -1,4 +1,4 @@
-# Firmware from yunluo V816.0.7.0.ULYMIXM fastboot package
+# Firmware from taiko V816.0.7.0.ULYMIXM fastboot package
 dpm.img;AB
 dtbo.img;AB
 gz.img;AB

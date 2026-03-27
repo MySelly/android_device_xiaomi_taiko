@@ -263,15 +263,15 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworksResOverlayYunluo \
-    SettingsResOverlayYunluo \
+    FrameworksResOverlayTaiko \
+    SettingsResOverlayTaiko \
     NcmTetheringOverlay \
-    WifiResOverlayYunluo
+    WifiResOverlayTaiko
 
 # Overlays (Lineage)
 PRODUCT_PACKAGES += \
-    LineageSDKOverlayYunluo \
-    PowerOffAlarmOverlayYunluo
+    LineageSDKOverlayTaiko \
+    PowerOffAlarmOverlayTaiko
 
 # Init scripts
 PRODUCT_PACKAGES += \
@@ -306,4 +306,4 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Inherit our proprietary vendor
-$(call inherit-product, vendor/xiaomi/yunluo/yunluo-vendor.mk)
+$(call inherit-product, vendor/xiaomi/taiko/taiko-vendor.mk)
