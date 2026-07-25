@@ -45,7 +45,11 @@ TARGET_BOARD_PLATFORM := mt6789
 # Boot image
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_RAMDISK_USE_LZ4 := true
+# Stock taiko boot.img has an empty ramdisk (first-stage lives in vendor_boot).
+# Lineage concatenates LZ4(vendor_boot) + LZ4(generic boot ramdisk); this GKI/LK
+# path fails with "rootfs image is not initramfs (Decoding failed)" then panics
+# on root=/dev/ram. Gzip multi-member concat is reliable on this boot chain.
+BOARD_RAMDISK_USE_LZ4 := false
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
@@ -83,15 +87,12 @@ PRODUCT_COPY_FILES += \
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 # Kernel modules
+# Platform vendor_ramdisk only — do NOT merge recovery modules here when using
+# BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT (they belong in the recovery fragment).
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.vendor_ramdisk))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
 
-# Also add recovery modules to vendor ramdisk
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.recovery))
-RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
-
-# Prevent duplicated entries (to solve duplicated build rules problem)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
+BOARD_RECOVERY_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(strip $(shell cat $(KERNEL_PATH)/modules.load.recovery)))
 
 # Vendor modules (installed to vendor_dlkm)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load))
