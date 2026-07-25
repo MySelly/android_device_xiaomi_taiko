@@ -8,7 +8,7 @@ vendor/lib64/libaal_key.so
 # MISSING-ON-TAIKO vendor/lib64/libaal_mtk.so
 
 # AEE
-vendor/lib/libaedv.so
+# SKIP-32BIT-DUP vendor/lib/libaedv.so
 vendor/lib64/libaedv.so
 
 # APU
@@ -599,37 +599,37 @@ vendor/bin/hw/android.hardware.media.c2-mediatek-64b
 # MISSING-ON-TAIKO vendor/etc/init/v3avpud.rc
 # MISSING-ON-TAIKO vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
 # MISSING-ON-TAIKO vendor/etc/VideoLog_dynamic.xml
-vendor/lib/mt6789/libmtk_drvb.so
+# SKIP-32BIT-DUP vendor/lib/mt6789/libmtk_drvb.so
 # MISSING-ON-TAIKO vendor/lib/mt6789/libvcodec_utility.so
-vendor/lib/mt6789/libvcodec_utility_v3a.so
+# SKIP-32BIT-DUP vendor/lib/mt6789/libvcodec_utility_v3a.so
 # MISSING-ON-TAIKO vendor/lib/mt6789/libvcodecdrv.so
-vendor/lib/mt6789/libvcodecdrv_v3a.so
-vendor/lib/mt6789/libvpudv3a_vcodec.so
-vendor/lib/AVCSecureVdecCA.so
-vendor/lib/HEVCSecureVdecCA.so
-vendor/lib/VP9SecureVdecCA.so
-vendor/lib/libAVCSecureVencCA.so
-vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/mt6789/libvcodecdrv_v3a.so
+# SKIP-32BIT-DUP vendor/lib/mt6789/libvpudv3a_vcodec.so
+# SKIP-32BIT-DUP vendor/lib/AVCSecureVdecCA.so
+# SKIP-32BIT-DUP vendor/lib/HEVCSecureVdecCA.so
+# SKIP-32BIT-DUP vendor/lib/VP9SecureVdecCA.so
+# SKIP-32BIT-DUP vendor/lib/libAVCSecureVencCA.so
+# SKIP-32BIT-DUP vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
 # MISSING-ON-TAIKO vendor/lib/libadpcmdec_mtk.so
-vendor/lib/libbwc.so
-vendor/lib/libh264dec_customize.so
-vendor/lib/libh264dec_sa.ca7.so;DISABLE_CHECKELF
-vendor/lib/libh264dec_sd.ca7.so;DISABLE_CHECKELF
-vendor/lib/libh264dec_se.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libbwc.so
+# SKIP-32BIT-DUP vendor/lib/libh264dec_customize.so
+# SKIP-32BIT-DUP vendor/lib/libh264dec_sa.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libh264dec_sd.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libh264dec_se.ca7.so;DISABLE_CHECKELF
 # MISSING-ON-TAIKO vendor/lib/libh264enc_sa.ca7.so;DISABLE_CHECKELF
-vendor/lib/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
-vendor/lib/libion_mtk.so
-vendor/lib/libion_ulit.so
-vendor/lib/libladder.so
+# SKIP-32BIT-DUP vendor/lib/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libion_mtk.so
+# SKIP-32BIT-DUP vendor/lib/libion_ulit.so
+# SKIP-32BIT-DUP vendor/lib/libladder.so
 # MISSING-ON-TAIKO vendor/lib/libmp3dec_mtk.so
-vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
 # MISSING-ON-TAIKO vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
-vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
 # MISSING-ON-TAIKO vendor/lib/libvcodec_utility_plat.mt6789.so
-vendor/lib/libvcodecdrv_header_stub.so
-vendor/lib/libvp8dec_sa.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libvcodecdrv_header_stub.so
+# SKIP-32BIT-DUP vendor/lib/libvp8dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
-vendor/lib/libvp9dec_sa.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libvp9dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libmtk_drvb.so
 vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
@@ -783,9 +783,9 @@ vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.p
 # TEE
 # MISSING-ON-TAIKO vendor/bin/teei_daemon
 # MISSING-ON-TAIKO vendor/etc/init/microtrust.rc
-vendor/lib/libgz_gp_client.so
-vendor/lib/libgz_uree.so
-vendor/lib/libthha.so;DISABLE_CHECKELF
+# SKIP-32BIT-DUP vendor/lib/libgz_gp_client.so
+# SKIP-32BIT-DUP vendor/lib/libgz_uree.so
+# SKIP-32BIT-DUP vendor/lib/libthha.so;DISABLE_CHECKELF
 # MISSING-ON-TAIKO vendor/lib64/libTEECommon.so
 vendor/lib64/libgz_gp_client.so
 vendor/lib64/libgz_uree.so
