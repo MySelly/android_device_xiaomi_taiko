@@ -32,7 +32,7 @@ vendor/lib64/hw/audio.primary.mediatek.so;DISABLE_DEPS
 vendor/lib64/hw/audio.r_submix.mediatek.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
-vendor/lib64/libaudiocomponentengine_vendor.so
+vendor/lib64/libaudiocomponentengine_vendor.so;DISABLE_CHECKELF
 vendor/lib64/libaudiocustparam_vendor.so
 vendor/lib64/libaudiodcrflt_vendor.so
 vendor/lib64/libaudiofmtconv.so
@@ -264,7 +264,7 @@ vendor/lib64/mt6789/libcam.halisp.buf.so
 vendor/lib64/mt6789/libcam.halisp.common.so
 vendor/lib64/mt6789/libcam.halisp.so
 # MISSING-ON-TAIKO vendor/lib64/mt6789/libcam.halsensor.hwintegration.so
-vendor/lib64/mt6789/libcam.halsensor.so
+vendor/lib64/mt6789/libcam.halsensor.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libcam.iopipe.so
 vendor/lib64/mt6789/libcam.isptuning.so
 vendor/lib64/mt6789/libcam.pdtblgen.so
@@ -646,25 +646,25 @@ vendor/lib64/libcodec2_mtk_venc.so;DISABLE_DEPS
 # MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
 # MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_mp3dec.so
 # MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
-vendor/lib64/libcodec2_vpp_qt_plugin.so
-vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libcodec2_vpp_qt_plugin.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_vpp_rs_plugin.so;DISABLE_CHECKELF
 vendor/lib64/libformatter.so
 # MISSING-ON-TAIKO vendor/lib64/libmp3dec_mtk.so
-vendor/lib64/libmvpu_cic_ci_compiler.so
-vendor/lib64/libmvpu_clc_cl_compiler.so
-vendor/lib64/libmvpu_clc_mvpu_debuginfo.so
-vendor/lib64/libmvpu_clc_mvpu_elf.so
-vendor/lib64/libmvpu_clc_mvpu_utility.so
-vendor/lib64/libmvpu_clc_vpu_isa.so
-vendor/lib64/libmvpu_config.so
-vendor/lib64/libmvpu_engine.so
-vendor/lib64/libmvpu_engine_pub.so
-vendor/lib64/libmvpu_pattern.so
-vendor/lib64/libmvpu_pattern_pub.so
-vendor/lib64/libmvpu_runtime.so
-vendor/lib64/libmvpu_runtime_pub.so
-vendor/lib64/libmvpuop_mtk_cv.so
-vendor/lib64/libmvpuop_mtk_nn.so
+vendor/lib64/libmvpu_cic_ci_compiler.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_clc_cl_compiler.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_clc_mvpu_debuginfo.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_clc_mvpu_elf.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_clc_mvpu_utility.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_clc_vpu_isa.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_config.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_engine.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_engine_pub.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_pattern.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_pattern_pub.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_runtime.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_runtime_pub.so;DISABLE_CHECKELF
+vendor/lib64/libmvpuop_mtk_cv.so;DISABLE_CHECKELF
+vendor/lib64/libmvpuop_mtk_nn.so;DISABLE_CHECKELF
 vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvpu.so
@@ -867,14 +867,14 @@ vendor/lib64/libpq_sec.so
 vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqsharememory.so;DISABLE_DEPS
 vendor/lib64/libpqtuning.so
-vendor/lib64/libpqxmlflagparser.so
+vendor/lib64/libpqxmlflagparser.so;DISABLE_CHECKELF
 vendor/lib64/libsdrparser.so
 vendor/lib64/libaal_sec.so
-vendor/lib64/libmisight.so
+vendor/lib64/libmisight.so;DISABLE_CHECKELF
 vendor/lib64/libbluetooth_audio_session_aidl_mtk.so;DISABLE_DEPS
 vendor/lib64/libmtkperf_client_vendor.so;DISABLE_DEPS
-vendor/lib64/libmtkcam.MITPS.so
-vendor/lib64/mt6789/libmtkcam.debugwrapper.so
+vendor/lib64/libmtkcam.MITPS.so;DISABLE_CHECKELF
+vendor/lib64/mt6789/libmtkcam.debugwrapper.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libmtkcam_hal_aidl_provider.so;DISABLE_DEPS
 
 # MediaTek/ARM AIDL NDK stubs required by check_elf=True
@@ -900,31 +900,31 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent-V1-ndk.so;DISABLE_DEPS
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so;DISABLE_DEPS
 
 # Additional check_elf shared_libs from dump
-vendor/lib64/gc05a2_truly_front_mipi_raw_IdxMgr.so
-vendor/lib64/gc08a8_truly_main_mipi_raw_IdxMgr.so
-vendor/lib64/libMiVideoFilter.so
-vendor/lib64/libTrueSight.so
-vendor/lib64/libanc_night_preview.so
-vendor/lib64/libaudiocomponentenginec.so
-vendor/lib64/libcam.halsensor.hwintegration_mt6789.so
-vendor/lib64/libcam.halsensor.hwintegration_mt6855.so
-vendor/lib64/libcodec2_fsr.so;DISABLE_DEPS
-vendor/lib64/libcodec2_vpp_chdr_plugin.so
-vendor/lib64/libcodec2_vpp_fa_plugin.so
-vendor/lib64/libcodec2_vpp_ft_plugin.so
-vendor/lib64/libcodec2_vpp_mi_plugin.so
-vendor/lib64/libcodec2_vpp_roi_plugin.so
-vendor/lib64/libmialgo_sd.so
-vendor/lib64/libmorpho_HdrChecker.so
-vendor/lib64/libmorpho_ImageRefiner.so
-vendor/lib64/libmorpho_video_stabilizer.so
+vendor/lib64/gc05a2_truly_front_mipi_raw_IdxMgr.so;DISABLE_CHECKELF
+vendor/lib64/gc08a8_truly_main_mipi_raw_IdxMgr.so;DISABLE_CHECKELF
+vendor/lib64/libMiVideoFilter.so;DISABLE_CHECKELF
+vendor/lib64/libTrueSight.so;DISABLE_CHECKELF
+vendor/lib64/libanc_night_preview.so;DISABLE_CHECKELF
+vendor/lib64/libaudiocomponentenginec.so;DISABLE_CHECKELF
+vendor/lib64/libcam.halsensor.hwintegration_mt6789.so;DISABLE_CHECKELF
+vendor/lib64/libcam.halsensor.hwintegration_mt6855.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_fsr.so;DISABLE_DEPS;DISABLE_CHECKELF
+vendor/lib64/libcodec2_vpp_chdr_plugin.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_vpp_fa_plugin.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_vpp_ft_plugin.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_vpp_mi_plugin.so;DISABLE_CHECKELF
+vendor/lib64/libcodec2_vpp_roi_plugin.so;DISABLE_CHECKELF
+vendor/lib64/libmialgo_sd.so;DISABLE_CHECKELF
+vendor/lib64/libmorpho_HdrChecker.so;DISABLE_CHECKELF
+vendor/lib64/libmorpho_ImageRefiner.so;DISABLE_CHECKELF
+vendor/lib64/libmorpho_video_stabilizer.so;DISABLE_CHECKELF
 vendor/lib64/libmtkcam_hal_aidl_common.so;DISABLE_DEPS
 vendor/lib64/libmtkcam_hal_aidl_device.so;DISABLE_DEPS
-vendor/lib64/libmtkisp_metadata_V3.so
-vendor/lib64/libmvpu_runtime_builtin.so
+vendor/lib64/libmtkisp_metadata_V3.so;DISABLE_CHECKELF
+vendor/lib64/libmvpu_runtime_builtin.so;DISABLE_CHECKELF
 vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libpqxmlparser.so
+vendor/lib64/libpqxmlparser.so;DISABLE_CHECKELF
 
 # Pass2 check_elf deps
-vendor/lib64/libanc_night.so
+vendor/lib64/libanc_night.so;DISABLE_CHECKELF
 vendor/lib64/libmtkcam_hal_aidl_utils.so;DISABLE_DEPS
