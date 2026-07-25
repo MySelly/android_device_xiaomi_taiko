@@ -222,7 +222,6 @@ VENDOR_PLATFORM_LINKS := \
 	$(TARGET_OUT_VENDOR)/lib64/libmtkcam_sysutils.so \
 	$(TARGET_OUT_VENDOR)/lib64/libmtkcam_tuning_utils.so \
 	$(TARGET_OUT_VENDOR)/lib64/libmtkcam_ulog.so \
-	$(TARGET_OUT_VENDOR)/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so \
 	$(TARGET_OUT_VENDOR)/lib64/libneuron_adapter_mgvi.so \
 	$(TARGET_OUT_VENDOR)/lib64/libneuron_runtime.5.so \
 	$(TARGET_OUT_VENDOR)/lib64/libnir_neon_driver.so \
