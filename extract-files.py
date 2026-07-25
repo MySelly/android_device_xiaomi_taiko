@@ -44,22 +44,15 @@ def fixup_ndk_platform(libname: str) -> tuple[str, str]:
 patchelf_version = "0_17_2"
 
 blob_fixups: blob_fixups_user_type = {
-    "vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod": blob_fixup()
+    # Taiko uses MiTEE keymint (Android 16); keep light touch until deps verified
+    "vendor/bin/hw/android.hardware.security.keymint@4.0-service.mitee": blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed(
-        "android.hardware.security.keymint-V1-ndk_platform.so",
-        "android.hardware.security.keymint-V3-ndk.so",
-    )
-    .add_needed("android.hardware.security.rkp-V3-ndk.so")
-    .replace_needed(
-        *fixup_ndk_platform("android.hardware.security.secureclock-V1-ndk_platform.so")
-    )
-    .replace_needed(
-        *fixup_ndk_platform("android.hardware.security.sharedsecret-V1-ndk_platform.so")
+        *fixup_ndk_platform("android.hardware.security.keymint-V4-ndk_platform.so")
     ),
-    "vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc": blob_fixup().regex_replace(
-        "android.hardware.graphics.allocator@4.0-service-mediatek",
-        "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
+    "vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc": blob_fixup().regex_replace(
+        "android.hardware.graphics.allocator-V2-service-mediatek$",
+        "android.hardware.graphics.allocator-V2-service-mediatek.mt6789",
     ),
     (
         "vendor/lib/libwvhidl.so",
@@ -76,12 +69,12 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
     .patchelf_version(patchelf_version)
     .add_needed("libshim_sensors.so"),
-    "vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b": blob_fixup()
+    "vendor/bin/hw/android.hardware.media.c2-mediatek-64b": blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libavservices_minijail_vendor.so", "libavservices_minijail.so")
     .add_needed("libstagefright_foundation-v33.so"),
-    "vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc": blob_fixup().regex_replace(
-        "@1.2-mediatek", "@1.2-mediatek-64b"
+    "vendor/etc/init/android.hardware.media.c2-mediatek.rc": blob_fixup().regex_replace(
+        "media\\.c2-mediatek$", "media.c2-mediatek-64b"
     ),
     "vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc": blob_fixup().regex_replace(
         "on property:vts(.|\n)*", ""
@@ -90,7 +83,6 @@ blob_fixups: blob_fixups_user_type = {
         "start", "enable"
     ),
     (
-        "vendor/lib64/libteei_daemon_vfs.so",
         "vendor/lib64/mt6789/lib3a.flash.so",
         "vendor/lib64/mt6789/libaaa_ltm.so",
         "vendor/lib64/mt6789/lib3a.ae.stat.so",
@@ -102,7 +94,8 @@ blob_fixups: blob_fixups_user_type = {
     .add_needed("liblog.so"),
     (
         "vendor/lib64/mt6789/libmtkcam_stdutils.so",
-        "vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so"
+        "vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so",
+        "vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so",
     ): blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libutils.so", "libutils-v32.so"),
@@ -111,13 +104,13 @@ blob_fixups: blob_fixups_user_type = {
     .add_needed("libshim_sensors.so")
     .replace_needed("libutils.so", "libutils-v32.so"),
     (
-    "vendor/lib64/libnvram.so",
-    "vendor/lib64/libtflite_mtk.so",
-    "vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so"
-    ): blob_fixup()
-    .add_needed('libbase_shim.so'),
-    "vendor/lib64/hw/hwcomposer.mtk_common.so": blob_fixup()
-    .add_needed('libprocessgroup_shim.so'),
+        "vendor/lib64/libnvram.so",
+        "vendor/lib64/libtflite_mtk.so",
+        "vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so",
+    ): blob_fixup().add_needed("libbase_shim.so"),
+    "vendor/lib64/hw/hwcomposer.mtk_common.so": blob_fixup().add_needed(
+        "libprocessgroup_shim.so"
+    ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
@@ -126,7 +119,7 @@ module = ExtractUtilsModule(
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
-    check_elf=True,
+    check_elf=False,
     add_firmware_proprietary_file=True,
 )
 

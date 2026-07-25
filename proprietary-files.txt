@@ -2,29 +2,29 @@
 
 # AAL
 vendor/lib64/mt6789/libaal_cust_func.so
-vendor/lib64/mt6789/libaalservice.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libaalservice.so
 vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
-vendor/lib64/libaal_mtk.so
+# MISSING-ON-TAIKO vendor/lib64/libaal_mtk.so
 
 # AEE
 vendor/lib/libaedv.so
 vendor/lib64/libaedv.so
 
 # APU
-vendor/etc/vintf/manifest/manifest_apuware_apusys.xml
-vendor/etc/vintf/manifest/manifest_apuware_hmp.xml
-vendor/etc/vintf/manifest/manifest_apuware_utils.xml
-vendor/lib64/APUWareApusysServer.so
-vendor/lib64/APUWareHmpServer.so
-vendor/lib64/APUWareUtilsServer.so
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/manifest_apuware_apusys.xml
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/manifest_apuware_hmp.xml
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/manifest_apuware_utils.xml
+# MISSING-ON-TAIKO vendor/lib64/APUWareApusysServer.so
+# MISSING-ON-TAIKO vendor/lib64/APUWareHmpServer.so
+# MISSING-ON-TAIKO vendor/lib64/APUWareUtilsServer.so
 vendor/lib64/libapu_mdw.so
 vendor/lib64/libapu_mdw_batch.so
 vendor/lib64/libapusys.so
-vendor/lib64/libapusys_edma.so
-vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so
-vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so
-vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
+# MISSING-ON-TAIKO vendor/lib64/libapusys_edma.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 
 # Audio
@@ -42,7 +42,7 @@ vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/libaurisysdemo.so
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libcvsd_mtk.so
-vendor/lib64/libmiresample.so
+# MISSING-ON-TAIKO vendor/lib64/libmiresample.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
@@ -50,9 +50,9 @@ vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libsixth.so
 vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
-vendor/lib64/libvoiprec.so
+# MISSING-ON-TAIKO vendor/lib64/libvoiprec.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
-vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 
 # Audio Configurations
 vendor/etc/audio_param/AudioParamOptions_mgvi.xml
@@ -126,8 +126,8 @@ vendor/etc/audio_param/Ultrasound_AudioParam.xml
 vendor/etc/audio_param/Ultrasound_ParamUnitDesc.xml
 vendor/etc/audio_param/UplinkConfiguration_AudioParam.xml
 vendor/etc/audio_param/UplinkConfiguration_ParamUnitDesc.xml
-vendor/etc/audio_param/VOW_AudioParam.xml
-vendor/etc/audio_param/VOW_ParamUnitDesc.xml
+# MISSING-ON-TAIKO vendor/etc/audio_param/VOW_AudioParam.xml
+# MISSING-ON-TAIKO vendor/etc/audio_param/VOW_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPDMNR_AudioParam.xml
 vendor/etc/audio_param/VoIPDMNR_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPGeneral_AudioParam.xml
@@ -166,9 +166,9 @@ vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
 vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
-vendor/etc/sixa_aurisys_param/sixth_param.txt
-vendor/etc/sixa_aurisys_param/sixth_param_voip.txt
-vendor/etc/AudioLog_dynamic.xml
+# MISSING-ON-TAIKO vendor/etc/sixa_aurisys_param/sixth_param.txt
+# MISSING-ON-TAIKO vendor/etc/sixa_aurisys_param/sixth_param_voip.txt
+# MISSING-ON-TAIKO vendor/etc/AudioLog_dynamic.xml
 
 # Bluetooth
 vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
@@ -185,16 +185,16 @@ vendor/bin/hw/mt6789/camerahalserver
 vendor/etc/init/camerahalserver.rc
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so;DISABLE_CHECKELF
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.atms@1.0-impl.so
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.atms@1.0-impl.so
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so
-vendor/lib64/mt6789/gc08a3_mipi_raw_IdxMgr.so
-vendor/lib64/mt6789/gc08a3_mipi_raw_tuning.so
-vendor/lib64/mt6789/hi846_mipi_raw_IdxMgr.so
-vendor/lib64/mt6789/hi846_mipi_raw_tuning.so
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/gc08a3_mipi_raw_IdxMgr.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/gc08a3_mipi_raw_tuning.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/hi846_mipi_raw_IdxMgr.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/hi846_mipi_raw_tuning.so
 vendor/lib64/mt6789/lib3a.ae.core.so
 vendor/lib64/mt6789/lib3a.ae.so
 vendor/lib64/mt6789/lib3a.ae.stat.so
@@ -216,20 +216,20 @@ vendor/lib64/mt6789/lib3a.log.so
 vendor/lib64/mt6789/lib3a.n3d3a.so
 vendor/lib64/mt6789/lib3a.sensors.color.so
 vendor/lib64/mt6789/lib3a.sensors.flicker.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Face_Capture.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Capture.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Capture_4cell.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Preview.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Preview_4k.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Video_1080.so
-vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Video_4k.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Face_Capture.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Capture.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Capture_4cell.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Preview.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Preview_4k.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Video_1080.so
-vendor/lib64/mt6789/libCamera_hi846mipiraw_Video_4k.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Face_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Capture_4cell.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Preview.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Preview_4k.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Video_1080.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Video_4k.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Face_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Capture_4cell.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Preview.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Scene_Preview_4k.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Video_1080.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libCamera_hi846mipiraw_Video_4k.so
 vendor/lib64/mt6789/libSonyIMX230PdafLibrary.so
 vendor/lib64/mt6789/libSonyIMX230PdafLibraryWrapper.so
 vendor/lib64/mt6789/libSonyIMX338PdafLibrary.so
@@ -262,7 +262,7 @@ vendor/lib64/mt6789/libcam.hal3a.v3.so
 vendor/lib64/mt6789/libcam.halisp.buf.so
 vendor/lib64/mt6789/libcam.halisp.common.so
 vendor/lib64/mt6789/libcam.halisp.so
-vendor/lib64/mt6789/libcam.halsensor.hwintegration.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libcam.halsensor.hwintegration.so
 vendor/lib64/mt6789/libcam.halsensor.so
 vendor/lib64/mt6789/libcam.iopipe.so
 vendor/lib64/mt6789/libcam.isptuning.so
@@ -374,38 +374,38 @@ vendor/lib64/mt6789/libmtkcam_tuning_utils.so
 vendor/lib64/mt6789/libmtkcam_ulog.so
 vendor/lib64/mt6789/libstereoinfoaccessor_vsdof.so
 vendor/lib64/mtkcam/mt6789/libmtkcam_streaminfo_plugin-p1stt.so
-vendor/lib64/hdr_capture.so
-vendor/lib64/hdr_preview.so
+# MISSING-ON-TAIKO vendor/lib64/hdr_capture.so
+# MISSING-ON-TAIKO vendor/lib64/hdr_preview.so
 vendor/lib64/hq_algoutils.so
-vendor/lib64/hq_asd.so
-vendor/lib64/libCamera_gc08a3mipiraw_3rd_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_3rd_Preview.so
-vendor/lib64/libCamera_gc08a3mipiraw_Doc_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_HDRMode_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_Night_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_QQ_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_Wechat_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Capture.so
-vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Capture4x.so
-vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Preview.so
-vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Preview4x.so
-vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Video2x.so
-vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Video4x.so
-vendor/lib64/libCamera_hi846mipiraw_3rd_Capture.so
-vendor/lib64/libCamera_hi846mipiraw_3rd_preview.so
-vendor/lib64/libCamera_hi846mipiraw_HDRMode_Capture.so
-vendor/lib64/libCamera_hi846mipiraw_QQ_Capture.so
-vendor/lib64/libCamera_hi846mipiraw_Wechat_capture.so
-vendor/lib64/libFaceCenterAlgo.so
+# MISSING-ON-TAIKO vendor/lib64/hq_asd.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_3rd_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_3rd_Preview.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Doc_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_HDRMode_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Night_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_QQ_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Wechat_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Capture4x.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Preview.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Preview4x.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Video2x.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Video4x.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_hi846mipiraw_3rd_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_hi846mipiraw_3rd_preview.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_hi846mipiraw_HDRMode_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_hi846mipiraw_QQ_Capture.so
+# MISSING-ON-TAIKO vendor/lib64/libCamera_hi846mipiraw_Wechat_capture.so
+# MISSING-ON-TAIKO vendor/lib64/libFaceCenterAlgo.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
-vendor/lib64/libarcsoft_beautyshot.so
-vendor/lib64/libarcsoft_fbpre.so
-vendor/lib64/libarcsoft_hdr_detection.so
-vendor/lib64/libarcsoft_high_dynamic_range.so
-vendor/lib64/libarcsoft_low_light_hdr.so
-vendor/lib64/libarcsoft_super_night.so
-vendor/lib64/libarcsoft_supernight.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_beautyshot.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_fbpre.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_hdr_detection.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_high_dynamic_range.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_low_light_hdr.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_super_night.so
+# MISSING-ON-TAIKO vendor/lib64/libarcsoft_supernight.so
 vendor/lib64/libc++_shared.so
 vendor/lib64/libcam.seninfn3d.so
 vendor/lib64/libcamalgo.3dnr.so
@@ -421,16 +421,16 @@ vendor/lib64/libcamalgo.platform.so
 vendor/lib64/libcamalgo.utility.so
 vendor/lib64/libcamalgo.warp.so
 vendor/lib64/libcamera_scene.so
-vendor/lib64/libfacetracker.so
+# MISSING-ON-TAIKO vendor/lib64/libfacetracker.so
 vendor/lib64/libheichal.so
 vendor/lib64/libimagebuffer_wrapper.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
-vendor/lib64/libmorpho.photosolid.so
-vendor/lib64/libmorpho_Lowlight.so
+# MISSING-ON-TAIKO vendor/lib64/libmorpho.photosolid.so
+# MISSING-ON-TAIKO vendor/lib64/libmorpho_Lowlight.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libmtkcam_pipelinepolicy-aov.so
-vendor/lib64/libmtkisp_metadata.so
+# MISSING-ON-TAIKO vendor/lib64/libmtkisp_metadata.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
 vendor/lib64/libudf.so
@@ -441,69 +441,69 @@ vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so
-vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 
 # Camera Configurations
-vendor/etc/camera/morpho_lowlight_params.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_facebook.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_instagram.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_line.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_messenger.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_simple.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_snapchat.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_telegram.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_tiktok.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_twitter.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_front_whatsapp.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_facebook.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_instagram.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_line.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_messenger.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_simple.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_snapchat.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_telegram.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_tiktok.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_twitter.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_whatsapp.xml
-vendor/etc/camera/morpho_lowlight_tuning_params_rear_zoom.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_params.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_facebook.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_instagram.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_line.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_messenger.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_simple.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_snapchat.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_telegram.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_tiktok.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_twitter.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_front_whatsapp.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_facebook.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_instagram.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_line.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_messenger.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_simple.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_snapchat.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_telegram.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_tiktok.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_twitter.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_whatsapp.xml
+# MISSING-ON-TAIKO vendor/etc/camera/morpho_lowlight_tuning_params_rear_zoom.xml
 vendor/etc/default_pd_calibration.bin
 
 # Display configs
-vendor/etc/AbnormalDisplayLog_dynamic.xml
-vendor/etc/cust_color.xml
-vendor/etc/cust_color_dsi_l83_36_02_0a_cphy_vdo_mi.xml
-vendor/etc/cust_color_dsi_l83_44_02_0b_cphy_vdo_mi.xml
-vendor/etc/cust_color_dsi_l83_44_02_0c_cphy_vdo_mi.xml
-vendor/etc/dsi_l83_36_02_0a_cphy_vdo_mi.xml
-vendor/etc/dsi_l83_44_02_0b_cphy_vdo_mi.xml
-vendor/etc/dsi_l83_44_02_0c_cphy_vdo_mi.xml
+# MISSING-ON-TAIKO vendor/etc/AbnormalDisplayLog_dynamic.xml
+# MISSING-ON-TAIKO vendor/etc/cust_color.xml
+# MISSING-ON-TAIKO vendor/etc/cust_color_dsi_l83_36_02_0a_cphy_vdo_mi.xml
+# MISSING-ON-TAIKO vendor/etc/cust_color_dsi_l83_44_02_0b_cphy_vdo_mi.xml
+# MISSING-ON-TAIKO vendor/etc/cust_color_dsi_l83_44_02_0c_cphy_vdo_mi.xml
+# MISSING-ON-TAIKO vendor/etc/dsi_l83_36_02_0a_cphy_vdo_mi.xml
+# MISSING-ON-TAIKO vendor/etc/dsi_l83_44_02_0b_cphy_vdo_mi.xml
+# MISSING-ON-TAIKO vendor/etc/dsi_l83_44_02_0c_cphy_vdo_mi.xml
 vendor/etc/screen_light.xml
 
 # DRM (Digital Rights Management)
-vendor/bin/hw/android.hardware.drm@1.4-service.widevine
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-vendor/lib64/mediadrm/libwvdrmengine.so
+# MISSING-ON-TAIKO vendor/bin/hw/android.hardware.drm@1.4-service.widevine
+# MISSING-ON-TAIKO vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
+# MISSING-ON-TAIKO vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/liboemcrypto.so
-vendor/lib64/libtlcWidevineModularDrm.so
-vendor/lib64/liburee_meta_drmkeyinstall.so
-vendor/lib64/libwvhidl.so
+# MISSING-ON-TAIKO vendor/lib64/libtlcWidevineModularDrm.so
+# MISSING-ON-TAIKO vendor/lib64/liburee_meta_drmkeyinstall.so
+# MISSING-ON-TAIKO vendor/lib64/libwvhidl.so
 vendor/lib64/libwvkeybox.so
 
 # Firmware
 vendor/firmware/BT_FW.cfg
-vendor/firmware/NT36xxx_MP_Setting_Criteria_596C.csv
-vendor/firmware/NT36xxx_MP_Setting_Criteria_596D.csv
+# MISSING-ON-TAIKO vendor/firmware/NT36xxx_MP_Setting_Criteria_596C.csv
+# MISSING-ON-TAIKO vendor/firmware/NT36xxx_MP_Setting_Criteria_596D.csv
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1d_1.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1e_1.bin
 vendor/firmware/WMT_SOC.cfg
 vendor/firmware/fm_cust.cfg
-vendor/firmware/gt9886_cfg_6877v01.bin
-vendor/firmware/gt9886_firmware_6877v01.bin
+# MISSING-ON-TAIKO vendor/firmware/gt9886_cfg_6877v01.bin
+# MISSING-ON-TAIKO vendor/firmware/gt9886_firmware_6877v01.bin
 vendor/firmware/gt9896s_cfg_6789v01.bin
 vendor/firmware/gt9896s_firmware_6789v01.bin
 vendor/firmware/lib3a.ccu
@@ -511,10 +511,10 @@ vendor/firmware/mt6631_fm_v1_coeff.bin
 vendor/firmware/mt6631_fm_v1_patch.bin
 vendor/firmware/mt6635_fm_v1_coeff.bin
 vendor/firmware/mt6635_fm_v1_patch.bin
-vendor/firmware/novatek_nt36523_L83_fw01.bin
-vendor/firmware/novatek_nt36523_L83_fw02.bin
-vendor/firmware/novatek_nt36523_L83_mp01.bin
-vendor/firmware/novatek_nt36523_L83_mp02.bin
+# MISSING-ON-TAIKO vendor/firmware/novatek_nt36523_L83_fw01.bin
+# MISSING-ON-TAIKO vendor/firmware/novatek_nt36523_L83_fw02.bin
+# MISSING-ON-TAIKO vendor/firmware/novatek_nt36523_L83_mp01.bin
+# MISSING-ON-TAIKO vendor/firmware/novatek_nt36523_L83_mp02.bin
 vendor/firmware/novatek_ts_fw.bin
 vendor/firmware/novatek_ts_fw_144.bin
 vendor/firmware/novatek_ts_fw_jdi.bin
@@ -533,13 +533,13 @@ vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 
 # Gatekeeper
-vendor/lib64/hw/gatekeeper.beanpod.so
-vendor/lib64/hw/libSoftGatekeeper.so
+# MISSING-ON-TAIKO vendor/lib64/hw/gatekeeper.beanpod.so
+# MISSING-ON-TAIKO vendor/lib64/hw/libSoftGatekeeper.so
 
 # Graphics
-vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
-vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
-vendor/etc/meow.cfg
+vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek.mt6789
+vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
+# MISSING-ON-TAIKO vendor/etc/meow.cfg
 vendor/lib/egl/egl.cfg
 vendor/lib64/egl/mt6789/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
@@ -547,12 +547,12 @@ vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
-vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib64/hw/mt6789/gralloc.common.so
+vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
+vendor/lib64/hw/mapper.mediatek.so
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/gralloc.common.so
 vendor/lib64/hw/mt6789/vulkan.mali.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
-vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so
 vendor/lib64/mt6789/libaiselector.so
 vendor/lib64/mt6789/libdpframework.so
 vendor/lib64/libDefaultFpsActor.so
@@ -574,35 +574,35 @@ vendor/lib64/libpixelflinger.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 
 # Keymaster
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Keymint
-vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod;DISABLE_DEPS
-vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
-vendor/etc/vintf/manifest/android.hardware.security.keymint-service.beanpod.xml
-vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.beanpod.xml
-vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.beanpod.xml
+vendor/bin/hw/android.hardware.security.keymint@4.0-service.mitee
+# MISSING-ON-TAIKO vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/android.hardware.security.keymint-service.beanpod.xml
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.beanpod.xml
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.beanpod.xml
 
 # KMSetkey
-vendor/bin/bp_kmsetkey_ca
-vendor/bin/kmsetkey
-vendor/bin/kmsetkey_isee
-vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-vendor/lib64/hw/kmsetkey.beanpod.so
-vendor/lib64/libkmsetkey.so
+# MISSING-ON-TAIKO vendor/bin/bp_kmsetkey_ca
+# MISSING-ON-TAIKO vendor/bin/kmsetkey
+# MISSING-ON-TAIKO vendor/bin/kmsetkey_isee
+# MISSING-ON-TAIKO vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
+# MISSING-ON-TAIKO vendor/lib64/hw/kmsetkey.beanpod.so
+# MISSING-ON-TAIKO vendor/lib64/libkmsetkey.so
 
 # Media (Common)
-vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b;DISABLE_CHECKELF
-vendor/bin/mt6789/v3avpud.mt6789:vendor/bin/v3avpud
-vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
-vendor/etc/init/v3avpud.rc
-vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
-vendor/etc/VideoLog_dynamic.xml
+vendor/bin/hw/android.hardware.media.c2-mediatek-64b
+# MISSING-ON-TAIKO vendor/bin/mt6789/v3avpud.mt6789:vendor/bin/v3avpud
+# MISSING-ON-TAIKO vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
+# MISSING-ON-TAIKO vendor/etc/init/v3avpud.rc
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
+# MISSING-ON-TAIKO vendor/etc/VideoLog_dynamic.xml
 vendor/lib/mt6789/libmtk_drvb.so
-vendor/lib/mt6789/libvcodec_utility.so
+# MISSING-ON-TAIKO vendor/lib/mt6789/libvcodec_utility.so
 vendor/lib/mt6789/libvcodec_utility_v3a.so
-vendor/lib/mt6789/libvcodecdrv.so
+# MISSING-ON-TAIKO vendor/lib/mt6789/libvcodecdrv.so
 vendor/lib/mt6789/libvcodecdrv_v3a.so
 vendor/lib/mt6789/libvpudv3a_vcodec.so
 vendor/lib/AVCSecureVdecCA.so
@@ -610,22 +610,22 @@ vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
-vendor/lib/libadpcmdec_mtk.so
+# MISSING-ON-TAIKO vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libbwc.so
 vendor/lib/libh264dec_customize.so
 vendor/lib/libh264dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libh264dec_sd.ca7.so;DISABLE_CHECKELF
 vendor/lib/libh264dec_se.ca7.so;DISABLE_CHECKELF
-vendor/lib/libh264enc_sa.ca7.so;DISABLE_CHECKELF
+# MISSING-ON-TAIKO vendor/lib/libh264enc_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
 vendor/lib/libladder.so
-vendor/lib/libmp3dec_mtk.so
+# MISSING-ON-TAIKO vendor/lib/libmp3dec_mtk.so
 vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
-vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
+# MISSING-ON-TAIKO vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
-vendor/lib/libvcodec_utility_plat.mt6789.so
+# MISSING-ON-TAIKO vendor/lib/libvcodec_utility_plat.mt6789.so
 vendor/lib/libvcodecdrv_header_stub.so
 vendor/lib/libvp8dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
@@ -635,20 +635,20 @@ vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/libAVCSecureVencCA.so
-vendor/lib64/libadpcmdec_mtk.so
+# MISSING-ON-TAIKO vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libbwc.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
-vendor/lib64/libcodec2_soft_mtk_alacdec.so
-vendor/lib64/libcodec2_soft_mtk_apedec.so
-vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
-vendor/lib64/libcodec2_soft_mtk_mp3dec.so
-vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
+# MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_alacdec.so
+# MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_apedec.so
+# MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
+# MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_mp3dec.so
+# MISSING-ON-TAIKO vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
-vendor/lib64/libmp3dec_mtk.so
+# MISSING-ON-TAIKO vendor/lib64/libmp3dec_mtk.so
 vendor/lib64/libmvpu_cic_ci_compiler.so
 vendor/lib64/libmvpu_clc_cl_compiler.so
 vendor/lib64/libmvpu_clc_mvpu_debuginfo.so
@@ -669,34 +669,34 @@ vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvpu.so
 
 # MMAgent
-vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
-vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
+# MISSING-ON-TAIKO vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
+# MISSING-ON-TAIKO vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
 vendor/lib64/libmmagent.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
 
 # MMS
-vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
-vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
-vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
+# MISSING-ON-TAIKO vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
+# MISSING-ON-TAIKO vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
+# MISSING-ON-TAIKO vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
 
 # Neural Networks
 vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk
-vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
-vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
-vendor/etc/armnn_app.config
-vendor/etc/nnapi_powerhal.json
-vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so;DISABLE_CHECKELF
+# MISSING-ON-TAIKO vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
+# MISSING-ON-TAIKO vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
+# MISSING-ON-TAIKO vendor/etc/armnn_app.config
+# MISSING-ON-TAIKO vendor/etc/nnapi_powerhal.json
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libneuron_adapter_mgvi.so
-vendor/lib64/mt6789/libneuron_runtime.5.so
-vendor/lib64/mt6789/libnir_neon_driver.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libneuron_runtime.5.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libnir_neon_driver.so
 vendor/lib64/libarmnn.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so
 vendor/lib64/libasn1c_core.so
@@ -705,7 +705,7 @@ vendor/lib64/libasn1c_mdmi.so
 vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libneuron_graph_delegate.mtk.so
-vendor/lib64/libneuron_platform.so
+# MISSING-ON-TAIKO vendor/lib64/libneuron_platform.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libnpagent.so
 vendor/lib64/libnpagent_server.so
@@ -715,15 +715,15 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
 # NVRAM
-vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
+# MISSING-ON-TAIKO vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
 vendor/bin/nvram_daemon
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/etc/init/nvram_daemon.rc
-vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
-vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+# MISSING-ON-TAIKO vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
+# MISSING-ON-TAIKO vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib64/libconnfem.so
 vendor/lib64/libcustom_nvram.so
 vendor/lib64/libfgauge_gm30.so
@@ -731,26 +731,26 @@ vendor/lib64/libfile_op.so
 vendor/lib64/libhwm.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
-vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
-vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
 # Picture Quality
-vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
-vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so;DISABLE_CHECKELF
+# MISSING-ON-TAIKO vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
+# MISSING-ON-TAIKO vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
+# MISSING-ON-TAIKO vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libpq_cust_base.so
-vendor/lib64/mt6789/libpq_prot.so
+# MISSING-ON-TAIKO vendor/lib64/mt6789/libpq_prot.so
 vendor/lib64/mt6789/libpqparamparser.so
 vendor/lib64/libpqframework.so
-vendor/lib64/librgbwlightsensor.so
+# MISSING-ON-TAIKO vendor/lib64/librgbwlightsensor.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.11.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
+# MISSING-ON-TAIKO vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
@@ -769,47 +769,47 @@ vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 vendor/lib64/hw/sensors.mediatek.V2.0.so:vendor/lib64/hw/sensors.mt6789.so;FIX_SONAME
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
-vendor/lib64/libksensor.so
-vendor/lib64/sensors.touch.detect.so
+# MISSING-ON-TAIKO vendor/lib64/libksensor.so
+# MISSING-ON-TAIKO vendor/lib64/sensors.touch.detect.so
 
 # SoundTrigger
 vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6789.so;FIX_SONAME
-vendor/lib64/libvow_ap_test_aa.so
-vendor/lib64/libvow_ap_test_dd.so
-vendor/lib64/libvow_ap_test_ha.so
-vendor/lib64/libvow_ap_test_hh.so
-vendor/lib64/libvow_ap_test_nn.so
+# MISSING-ON-TAIKO vendor/lib64/libvow_ap_test_aa.so
+# MISSING-ON-TAIKO vendor/lib64/libvow_ap_test_dd.so
+# MISSING-ON-TAIKO vendor/lib64/libvow_ap_test_ha.so
+# MISSING-ON-TAIKO vendor/lib64/libvow_ap_test_hh.so
+# MISSING-ON-TAIKO vendor/lib64/libvow_ap_test_nn.so
 
 # TEE
-vendor/bin/teei_daemon
-vendor/etc/init/microtrust.rc
+# MISSING-ON-TAIKO vendor/bin/teei_daemon
+# MISSING-ON-TAIKO vendor/etc/init/microtrust.rc
 vendor/lib/libgz_gp_client.so
 vendor/lib/libgz_uree.so
 vendor/lib/libthha.so;DISABLE_CHECKELF
-vendor/lib64/libTEECommon.so
+# MISSING-ON-TAIKO vendor/lib64/libTEECommon.so
 vendor/lib64/libgz_gp_client.so
 vendor/lib64/libgz_uree.so
-vendor/lib64/libimsg_log.so
-vendor/lib64/libteei_daemon_vfs.so
+# MISSING-ON-TAIKO vendor/lib64/libimsg_log.so
+# MISSING-ON-TAIKO vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/libthha.so;DISABLE_CHECKELF
 
 # TEE (TAs)
-vendor/thh/ta/0102030405060708090a0b0c0d0e0f10.ta
-vendor/thh/ta/020f0000000000000000000000000000.ta
-vendor/thh/ta/05120000000000000000000000000000.ta
-vendor/thh/ta/06090000000000000000000000000000.ta
-vendor/thh/ta/08030000000000000000000000000000.ta
-vendor/thh/ta/08110000000000000000000000000000.ta
-vendor/thh/ta/40188311faf343488db888ad39496f9a.ta
-vendor/thh/ta/5020170115e016302017012521300000.ta
-vendor/thh/ta/655a4b46cd7711eaaafbf382a6988e7b.ta
-vendor/thh/ta/86f623f6a2994dfdb560ffd3e5a62c29.ta
-vendor/thh/ta/8aaaf201246000007143fe4f7c823c80.ta
-vendor/thh/ta/c09c9c5daa504b78b0e46eda61556c3a.ta
-vendor/thh/ta/c1882f2d885e4e13a8c8e2622461b2fa.ta
-vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
-vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
-vendor/thh/ta/isee_model.json
+# MISSING-ON-TAIKO vendor/thh/ta/0102030405060708090a0b0c0d0e0f10.ta
+# MISSING-ON-TAIKO vendor/thh/ta/020f0000000000000000000000000000.ta
+# MISSING-ON-TAIKO vendor/thh/ta/05120000000000000000000000000000.ta
+# MISSING-ON-TAIKO vendor/thh/ta/06090000000000000000000000000000.ta
+# MISSING-ON-TAIKO vendor/thh/ta/08030000000000000000000000000000.ta
+# MISSING-ON-TAIKO vendor/thh/ta/08110000000000000000000000000000.ta
+# MISSING-ON-TAIKO vendor/thh/ta/40188311faf343488db888ad39496f9a.ta
+# MISSING-ON-TAIKO vendor/thh/ta/5020170115e016302017012521300000.ta
+# MISSING-ON-TAIKO vendor/thh/ta/655a4b46cd7711eaaafbf382a6988e7b.ta
+# MISSING-ON-TAIKO vendor/thh/ta/86f623f6a2994dfdb560ffd3e5a62c29.ta
+# MISSING-ON-TAIKO vendor/thh/ta/8aaaf201246000007143fe4f7c823c80.ta
+# MISSING-ON-TAIKO vendor/thh/ta/c09c9c5daa504b78b0e46eda61556c3a.ta
+# MISSING-ON-TAIKO vendor/thh/ta/c1882f2d885e4e13a8c8e2622461b2fa.ta
+# MISSING-ON-TAIKO vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
+# MISSING-ON-TAIKO vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
+# MISSING-ON-TAIKO vendor/thh/ta/isee_model.json
 
 # Thermal
 vendor/bin/mi_thermald
@@ -840,9 +840,20 @@ vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/etc/init/netdagent.rc
-vendor/etc/init/tetheroffloadservice.rc
+# MISSING-ON-TAIKO vendor/etc/init/tetheroffloadservice.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libifcutils_mtk.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
+
+# Taiko Android16 HAL renames / additions
+vendor/bin/hw/android.hardware.gatekeeper-service.mitee
+vendor/bin/hw/android.hardware.graphics.composer@3.4-service
+vendor/etc/init/android.hardware.gatekeeper-service.mitee.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
+vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
+vendor/etc/init/android.hardware.security.keymint.mitee@4.0-service.rc
+vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.mitee.xml
+vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
