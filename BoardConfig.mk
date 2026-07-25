@@ -50,6 +50,11 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 
+# Match stock vendor_boot bootconfig (GKI 6.12)
+BOARD_BOOTCONFIG += kernel.rcu_nocbs=all
+BOARD_BOOTCONFIG += kernel.rcutree.enable_rcu_lazy=1
+BOARD_BOOTCONFIG += kernel.rcupdate.rcu_cpu_stall_cputime=1
+
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x3fff8000
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -122,9 +127,13 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-# Recovery
+# Recovery (standalone recovery ramdisk fragment in vendor_boot v4)
+# Stock taiko vendor_boot has PLATFORM + RECOVERY fragments; without
+# BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT, `fastboot reboot recovery`
+# has nothing of type RECOVERY to load.
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6789
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_F2FS := true
