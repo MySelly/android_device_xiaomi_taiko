@@ -1,0 +1,13 @@
+# Firmware from taiko OS3.0.302.0.WOVMIXM fastboot package
+dpm.img;AB
+dtbo.img;AB
+gz.img;AB
+lk.img;AB
+logo.bin:logo.img;AB
+mcupm.img;AB
+pi_img.img;AB
+preloader_taiko.bin:preloader_raw.img;AB
+scp.img;AB
+spmfw.img;AB
+sspm.img;AB
+tee.img;AB

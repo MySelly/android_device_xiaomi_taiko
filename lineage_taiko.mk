@@ -1,0 +1,23 @@
+#
+# Copyright (C) 2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Inherit from those products. Most specific fist.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# Inherit from device makefile
+$(call inherit-product, device/xiaomi/taiko/device.mk)
+
+# Inherit some common LineageOS Stuff
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+
+PRODUCT_NAME := lineage_taiko
+PRODUCT_DEVICE := taiko
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_BRAND := Redmi
+PRODUCT_MODEL := 25040RP0AL
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
