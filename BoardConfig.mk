@@ -45,11 +45,9 @@ TARGET_BOARD_PLATFORM := mt6789
 # Boot image
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-# Stock taiko boot.img has an empty ramdisk (first-stage lives in vendor_boot).
-# Lineage concatenates LZ4(vendor_boot) + LZ4(generic boot ramdisk); this GKI/LK
-# path fails with "rootfs image is not initramfs (Decoding failed)" then panics
-# on root=/dev/ram. Gzip multi-member concat is reliable on this boot chain.
-BOARD_RAMDISK_USE_LZ4 := false
+# Stock vendor_boot fragments are LZ4. Gzip hangs on the MI logo for both
+# normal and recovery — Xiaomi LK expects LZ4 (same as yunluo/GKI).
+BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
