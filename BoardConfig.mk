@@ -49,6 +49,10 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 # normal and recovery — Xiaomi LK expects LZ4 (same as yunluo/GKI).
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+# Stock boot.img has ramdisk_size=0. A non-empty generic ramdisk concatenated
+# onto vendor_boot LZ4 fails initramfs decode (logo hang / panic). Ship a
+# kernel-only boot; first-stage is merged into vendor_ramdisk (see Android.mk).
+BOARD_PREBUILT_BOOTIMAGE := $(KERNEL_PATH)/boot-empty-ramdisk.img
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 
