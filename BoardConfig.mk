@@ -191,6 +191,9 @@ BOARD_VNDK_VERSION := current
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Bring-up: boot permissive (remove once denials are fixed)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 # Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
