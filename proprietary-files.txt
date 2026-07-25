@@ -922,7 +922,7 @@ vendor/lib64/libmtkcam_hal_aidl_common.so;DISABLE_DEPS
 vendor/lib64/libmtkcam_hal_aidl_device.so;DISABLE_DEPS
 vendor/lib64/libmtkisp_metadata_V3.so
 vendor/lib64/libmvpu_runtime_builtin.so
-vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so
+vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libpqxmlparser.so
 
 # Pass2 check_elf deps
