@@ -87,12 +87,14 @@ PRODUCT_COPY_FILES += \
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 # Kernel modules
-# Platform vendor_ramdisk only — do NOT merge recovery modules here when using
-# BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT (they belong in the recovery fragment).
+# Platform vendor_ramdisk only. Recovery-unique modules go to the recovery
+# fragment; modules already in the platform list are omitted to avoid
+# duplicate depmod_* make rules (recovery boot still loads PLATFORM+RECOVERY).
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.vendor_ramdisk))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
 
-BOARD_RECOVERY_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(strip $(shell cat $(KERNEL_PATH)/modules.load.recovery)))
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(filter-out $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD),$(strip $(shell cat $(KERNEL_PATH)/modules.load.recovery)))
+BOARD_RECOVERY_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_RECOVERY_KERNEL_MODULES_LOAD))
 
 # Vendor modules (installed to vendor_dlkm)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load))
