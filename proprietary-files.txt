@@ -628,7 +628,7 @@ vendor/bin/hw/android.hardware.media.c2-mediatek-64b
 # MISSING-ON-TAIKO vendor/lib/libvcodec_utility_plat.mt6789.so
 # SKIP-32BIT-DUP vendor/lib/libvcodecdrv_header_stub.so
 # SKIP-32BIT-DUP vendor/lib/libvp8dec_sa.ca7.so;DISABLE_CHECKELF
-vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
+# SKIP-32BIT-VENDOR-LIB vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
 # SKIP-32BIT-DUP vendor/lib/libvp9dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libmtk_drvb.so
 vendor/lib64/AVCSecureVdecCA.so
