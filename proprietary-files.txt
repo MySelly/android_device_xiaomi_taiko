@@ -875,7 +875,7 @@ vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
 vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libmtkcam.MITPS.so
 vendor/lib64/mt6789/libmtkcam.debugwrapper.so
-vendor/lib64/mt6789/libmtkcam_hal_aidl_provider.so
+vendor/lib64/mt6789/libmtkcam_hal_aidl_provider.so;DISABLE_DEPS
 
 # MediaTek/ARM AIDL NDK stubs required by check_elf=True
 vendor/lib64/arm.graphics-V5-ndk.so
@@ -918,8 +918,8 @@ vendor/lib64/libmialgo_sd.so
 vendor/lib64/libmorpho_HdrChecker.so
 vendor/lib64/libmorpho_ImageRefiner.so
 vendor/lib64/libmorpho_video_stabilizer.so
-vendor/lib64/libmtkcam_hal_aidl_common.so
-vendor/lib64/libmtkcam_hal_aidl_device.so
+vendor/lib64/libmtkcam_hal_aidl_common.so;DISABLE_DEPS
+vendor/lib64/libmtkcam_hal_aidl_device.so;DISABLE_DEPS
 vendor/lib64/libmtkisp_metadata_V3.so
 vendor/lib64/libmvpu_runtime_builtin.so
 vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so
@@ -927,4 +927,4 @@ vendor/lib64/libpqxmlparser.so
 
 # Pass2 check_elf deps
 vendor/lib64/libanc_night.so
-vendor/lib64/libmtkcam_hal_aidl_utils.so
+vendor/lib64/libmtkcam_hal_aidl_utils.so;DISABLE_DEPS
