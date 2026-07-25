@@ -238,6 +238,7 @@ vendor/lib64/mt6789/libSonyIMX386PdafLibrary.so
 vendor/lib64/mt6789/libSonyIMX386PdafLibraryWrapper.so
 vendor/lib64/mt6789/libSonyIMX519PdafLibrary.so
 vendor/lib64/mt6789/libSonyIMX519PdafLibraryWrapper.so
+vendor/lib64/libaaa_flickerutil.so
 vendor/lib64/mt6789/libaaa_ltm.so
 vendor/lib64/mt6789/libaaa_ltmx.so
 vendor/lib64/mt6789/libaiawb_moon.so
@@ -857,3 +858,21 @@ vendor/etc/init/android.hardware.security.keymint.mitee@4.0-service.rc
 vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
+
+# Extra ELF deps required by check_elf=True (taiko)
+vendor/lib64/libmtk_mali_user.so
+vendor/lib64/libteecli.so
+vendor/lib64/libsilkybrightnesscore.so
+vendor/lib64/libpq_sec.so
+vendor/lib64/libpqhdrmetaparser.so
+vendor/lib64/libpqsharememory.so
+vendor/lib64/libpqtuning.so
+vendor/lib64/libpqxmlflagparser.so
+vendor/lib64/libsdrparser.so
+vendor/lib64/libaal_sec.so
+vendor/lib64/libmisight.so
+vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
+vendor/lib64/libmtkperf_client_vendor.so
+vendor/lib64/libmtkcam.MITPS.so
+vendor/lib64/mt6789/libmtkcam.debugwrapper.so
+vendor/lib64/mt6789/libmtkcam_hal_aidl_provider.so
