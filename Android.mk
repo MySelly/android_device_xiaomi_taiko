@@ -258,4 +258,28 @@ $(VPUD_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(VENDOR_PLATFORM_LINKS) $(GATEKEEPER_SYMLINKS) $(SENSORS_SYMLINKS) $(AUDIO_SYMLINKS) $(VPUD_SYMLINKS)
 
+# Stock: boot.img ramdisk_size=0; first-stage (/init) lives in vendor_boot PLATFORM.
+# Do NOT guard on INTERNAL_VENDOR_RAMDISK_TARGET — it is undefined when this
+# Android.mk is parsed, so the merge never ran and PLATFORM had no /init.
+TAIKO_MERGE_VENDOR_RAMDISK_STAMP := $(PRODUCT_OUT)/.taiko_merge_first_stage_vendor_ramdisk
+ifeq ($(BOARD_RAMDISK_USE_LZ4),true)
+TAIKO_VENDOR_RAMDISK_CPIO := $(call intermediates-dir-for,PACKAGING,vendor_boot)/vendor_ramdisk.cpio.lz4
+else
+TAIKO_VENDOR_RAMDISK_CPIO := $(call intermediates-dir-for,PACKAGING,vendor_boot)/vendor_ramdisk.cpio.gz
+endif
+
+$(TAIKO_MERGE_VENDOR_RAMDISK_STAMP): $(filter $(TARGET_RAMDISK_OUT)/%,$(ALL_DEFAULT_INSTALLED_MODULES))
+	@echo "taiko: merge first-stage ramdisk into vendor_ramdisk"
+	@mkdir -p $(TARGET_VENDOR_RAMDISK_OUT)
+	@cp -a $(TARGET_RAMDISK_OUT)/. $(TARGET_VENDOR_RAMDISK_OUT)/
+	@# Stock path: first_stage_ramdisk/fstab.mt6789 (not only system/etc/...)
+	@if [ -f $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789 ]; then \
+		cp -f $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789 \
+			$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789; \
+	fi
+	@test -e $(TARGET_VENDOR_RAMDISK_OUT)/init -o -e $(TARGET_VENDOR_RAMDISK_OUT)/system/bin/init
+	@touch $@
+
+$(TAIKO_VENDOR_RAMDISK_CPIO): $(TAIKO_MERGE_VENDOR_RAMDISK_STAMP)
+
 endif

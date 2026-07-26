@@ -42,11 +42,17 @@ BOARD_VENDOR := xiaomi
 BOARD_HAS_MTK_HARDWARE := true
 TARGET_BOARD_PLATFORM := mt6789
 
-# Boot image — match f55da29 (first working recovery)
+# Boot image
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
+# Stock/vendor_boot fragments are LZ4; Xiaomi LK hangs on gzip (MI logo).
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+# Stock boot.img ramdisk_size=0; first-stage lives in vendor_boot PLATFORM.
+# Lineage LZ4(vendor)+LZ4(generic boot) fails initramfs decode on this GKI.
+# Empty boot + merge of generic ramdisk into PLATFORM (see Android.mk).
+# Recovery still uses the separate RECOVERY fragment (not overwritten).
+BOARD_PREBUILT_BOOTIMAGE := $(KERNEL_PATH)/boot-empty-ramdisk.img
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 
