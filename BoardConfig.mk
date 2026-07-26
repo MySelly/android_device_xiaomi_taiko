@@ -55,15 +55,6 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_BOOTIMAGE := $(KERNEL_PATH)/boot-empty-ramdisk.img
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
-# Stock LK/bootargs; keep explicit so normal-boot pstore is usable (PREBUILT boot
-# has empty cmdline — these land on vendor_boot).
-BOARD_KERNEL_CMDLINE += ramoops.mem_address=0x48090000
-BOARD_KERNEL_CMDLINE += ramoops.mem_size=0xe0000
-BOARD_KERNEL_CMDLINE += ramoops.pmsg_size=0x80000
-BOARD_KERNEL_CMDLINE += ramoops.console_size=0x40000
-BOARD_KERNEL_CMDLINE += loglevel=8
-# Bring-up only: avoid early SELinux denials blocking init/HAL startup.
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Match stock vendor_boot bootconfig (GKI 6.12)
 BOARD_BOOTCONFIG += kernel.rcu_nocbs=all
