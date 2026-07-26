@@ -292,7 +292,6 @@ PRODUCT_PACKAGES += \
     init.sensor_2_0.rc \
     ueventd.mt6789.rc \
     init.recovery.usb.rc \
-    mtk_plpath_utils_taiko_recovery \
     fstab.mt6789 \
     fstab.mt8781 \
     fstab.mt8781.vendor_ramdisk \

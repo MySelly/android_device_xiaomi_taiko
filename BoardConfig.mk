@@ -49,9 +49,10 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 # normal and recovery — Xiaomi LK expects LZ4 (same as yunluo/GKI).
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-# Use Lineage generic boot ramdisk for recovery bring-up. Empty-boot + merging
-# first-stage into PLATFORM made /init the normal first-stage binary and
-# produced logo→black-screen instead of the recovery UI.
+# Empty boot ramdisk (stock). Generic boot /init is concatenated last and
+# overwrites recovery's /init → first-stage runs → black screen / bootloop.
+# Do not merge first-stage into PLATFORM; recovery fragment provides /init.
+BOARD_PREBUILT_BOOTIMAGE := $(KERNEL_PATH)/boot-empty-ramdisk.img
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 
@@ -87,15 +88,16 @@ PRODUCT_COPY_FILES += \
 # DTB
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
-# Kernel modules (stock layout)
-# All .ko live in PLATFORM vendor_ramdisk. Recovery fragment has no modules.
-# Normal boot uses modules.load; recovery uses modules.load.recovery (both in
-# PLATFORM). Do not put .ko in BOARD_RECOVERY_KERNEL_MODULES — that stripped
-# display modules out of the recovery path and hung on the MI logo.
-# awk '!seen[$$0]++' keeps first-seen order (load order matters).
+# Kernel modules
+# Keep full .ko set in PLATFORM (normal + recovery load lists) AND copy the
+# full recovery list into the RECOVERY fragment. When recovery first worked,
+# display modules lived in the recovery fragment; PLATFORM-only was not enough
+# on this LK. awk '!seen[$$0]++' keeps first-seen order.
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell awk '!seen[$$0]++' $(KERNEL_PATH)/modules.load.vendor_ramdisk))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell awk '!seen[$$0]++' $(KERNEL_PATH)/modules.load.recovery))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
+BOARD_RECOVERY_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES)
 
 # Vendor modules (installed to vendor_dlkm)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell awk '!seen[$$0]++' $(KERNEL_PATH)/modules.load))
@@ -193,9 +195,6 @@ BOARD_VNDK_VERSION := current
 # SEPolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
-# Bring-up: boot permissive (remove once denials are fixed)
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
