@@ -1,0 +1,10 @@
+# Ensure mitee KeyMint is up for keystore2 (/data metadata encrypt).
+on late-fs
+    enable vendor.keymint-mitee
+    start tee-supplicant
+    start vendor.keymint-mitee
+
+on post-fs-data
+    enable vendor.keymint-mitee
+    start tee-supplicant
+    start vendor.keymint-mitee

@@ -286,6 +286,7 @@ PRODUCT_PACKAGES += \
     init.mtkgki.rc \
     init.project.rc \
     init.sensor_2_0.rc \
+    init.taiko.mitee.rc \
     ueventd.mt6789.rc \
     init.recovery.usb.rc \
     fstab.mt6789 \

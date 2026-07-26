@@ -107,3 +107,10 @@ prebuilt_etc {
     vendor: true
 }
 
+prebuilt_etc {
+    name: "init.taiko.mitee.rc",
+    src: "etc/init/init.taiko.mitee.rc",
+    sub_dir: "init",
+    vendor: true
+}
+
