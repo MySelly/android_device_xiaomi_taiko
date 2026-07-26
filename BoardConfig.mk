@@ -89,9 +89,8 @@ LOCAL_KERNEL := $(KERNEL_PATH)/Image.gz
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# DTB / DTBO (stock taiko; required for normal boot panel/DRM path)
+# DTB (vendor_boot). DTBO comes from vendor radio/ via proprietary-firmware.txt.
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 
 # Kernel modules — exact layout from f55da29 (recovery UI worked with this).
 # All .ko in PLATFORM; recovery fragment has no BOARD_RECOVERY_KERNEL_MODULES.
