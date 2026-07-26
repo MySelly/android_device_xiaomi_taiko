@@ -260,16 +260,23 @@ else
 TAIKO_VENDOR_RAMDISK_CPIO := $(call intermediates-dir-for,PACKAGING,vendor_boot)/vendor_ramdisk.cpio.gz
 endif
 
-$(TAIKO_MERGE_VENDOR_RAMDISK_STAMP): $(filter $(TARGET_RAMDISK_OUT)/%,$(ALL_DEFAULT_INSTALLED_MODULES))
+# Also wait for vendor_ramdisk fstab install so we do not pack a stale/missing
+# first_stage_ramdisk/fstab.mt6789 (stock first_stage reads that path).
+TAIKO_VENDOR_RAMDISK_FSTAB := $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789
+
+$(TAIKO_MERGE_VENDOR_RAMDISK_STAMP): $(filter $(TARGET_RAMDISK_OUT)/%,$(ALL_DEFAULT_INSTALLED_MODULES)) $(TAIKO_VENDOR_RAMDISK_FSTAB)
 	@echo "taiko: merge first-stage ramdisk into vendor_ramdisk"
-	@mkdir -p $(TARGET_VENDOR_RAMDISK_OUT)
+	@mkdir -p $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc
 	@cp -a $(TARGET_RAMDISK_OUT)/. $(TARGET_VENDOR_RAMDISK_OUT)/
-	@# Stock path: first_stage_ramdisk/fstab.mt6789 (not only system/etc/...)
-	@if [ -f $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789 ]; then \
-		cp -f $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789 \
-			$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789; \
-	fi
+	@# Force device fstab into stock + AOSP first_stage paths (ext4 for system*).
+	@cp -f $(DEVICE_PATH)/rootdir/etc/fstab.mt6789 \
+		$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789
+	@cp -f $(DEVICE_PATH)/rootdir/etc/fstab.mt6789 \
+		$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789
+	@cp -f $(DEVICE_PATH)/rootdir/etc/fstab.mt6789 \
+		$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt8781
 	@test -e $(TARGET_VENDOR_RAMDISK_OUT)/init -o -e $(TARGET_VENDOR_RAMDISK_OUT)/system/bin/init
+	@test -s $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789
 	@touch $@
 
 $(TAIKO_VENDOR_RAMDISK_CPIO): $(TAIKO_MERGE_VENDOR_RAMDISK_STAMP)
