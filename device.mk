@@ -9,7 +9,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 # MTK recovery: partition symlink helper + USB (from stock vendor_boot)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.mt6789.rc:recovery/root/init.recovery.mt6789.rc
+    $(LOCAL_PATH)/recovery/root/init.recovery.mt6789.rc:recovery/root/init.recovery.mt6789.rc \
+    $(LOCAL_PATH)/prebuilt/recovery/mtk_plpath_utils:recovery/root/system/bin/mtk_plpath_utils
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -292,7 +293,6 @@ PRODUCT_PACKAGES += \
     init.sensor_2_0.rc \
     ueventd.mt6789.rc \
     init.recovery.usb.rc \
-    mtk_plpath_utils.recovery \
     fstab.mt6789 \
     fstab.mt8781 \
     fstab.mt8781.vendor_ramdisk \
