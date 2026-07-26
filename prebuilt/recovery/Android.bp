@@ -1,0 +1,13 @@
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_prebuilt_binary {
+    name: "mtk_plpath_utils.recovery",
+    stem: "mtk_plpath_utils",
+    srcs: ["mtk_plpath_utils"],
+    recovery: true,
+    proprietary: true,
+    prefer: true,
+    check_elf_files: false,
+}
