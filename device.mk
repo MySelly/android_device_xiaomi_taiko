@@ -117,17 +117,17 @@ PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor \
     libkeymaster_portable.vendor
 
-# Keymint
+# Keymint (mitee AIDL; stock taiko uses KeyMint 4 + tee-supplicant)
 PRODUCT_PACKAGES += \
-    android.hardware.security.keymint-V3-ndk.vendor \
+    android.hardware.security.keymint-V4-ndk.vendor \
+    android.hardware.security.secureclock-V1-ndk.vendor \
+    android.hardware.security.sharedsecret-V1-ndk.vendor \
+    android.hardware.security.rkp-V3-ndk.vendor \
     lib_android_keymaster_keymint_utils.vendor \
     libcppbor_external.vendor \
     libkeymint.vendor
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl:64 \
-    android.hardware.gatekeeper@1.0-service
+# Gatekeeper: stock mitee AIDL (vendor prebuilt). Do not ship HIDL/soft GK.
 
 # Lineage Health
 PRODUCT_PACKAGES += \

@@ -231,10 +231,6 @@ VENDOR_PLATFORM_LINKS := \
 	$(TARGET_OUT_VENDOR)/lib64/libstereoinfoaccessor_vsdof.so \
 	$(TARGET_OUT_VENDOR)/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 
-# Gatekeeper symlinks
-GATEKEEPER_SYMLINKS := \
-	$(TARGET_OUT_VENDOR)/lib64/hw/gatekeeper.default.so
-
 # Audio symlinks
 AUDIO_SYMLINKS := \
 	$(TARGET_OUT_VENDOR)/lib64/hw/audio.primary.$(TARGET_BOARD_PLATFORM).so \
@@ -244,10 +240,6 @@ $(VENDOR_PLATFORM_LINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $(notdir $@)"
 	@ln -sf $(TARGET_BOARD_PLATFORM)/$(notdir $@) $@
 
-$(GATEKEEPER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	$(hide) echo "Linking $@"
-	@ln -sf libSoftGatekeeper.so $@
-
 $(AUDIO_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $@"
 	@ln -sf $(subst $(TARGET_BOARD_PLATFORM),mediatek,$(notdir $@)) $@
@@ -256,7 +248,7 @@ $(VPUD_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $@"
 	@ln -sf $(notdir $@).$(TARGET_BOARD_PLATFORM) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(VENDOR_PLATFORM_LINKS) $(GATEKEEPER_SYMLINKS) $(SENSORS_SYMLINKS) $(AUDIO_SYMLINKS) $(VPUD_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(VENDOR_PLATFORM_LINKS) $(SENSORS_SYMLINKS) $(AUDIO_SYMLINKS) $(VPUD_SYMLINKS)
 
 # Stock: boot.img ramdisk_size=0; first-stage (/init) lives in vendor_boot PLATFORM.
 # Do NOT guard on INTERNAL_VENDOR_RAMDISK_TARGET — it is undefined when this

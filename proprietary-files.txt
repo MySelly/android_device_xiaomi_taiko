@@ -851,7 +851,9 @@ vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so;DISABLE_CHECKELF
 # Taiko Android16 HAL renames / additions
 vendor/bin/hw/android.hardware.gatekeeper-service.mitee;DISABLE_DEPS
 vendor/bin/hw/android.hardware.graphics.composer@3.4-service;DISABLE_DEPS
+vendor/bin/tee-supplicant;DISABLE_CHECKELF
 vendor/etc/init/android.hardware.gatekeeper-service.mitee.rc
+vendor/etc/init/tee-supplicant.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
 vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
 vendor/etc/init/android.hardware.security.keymint.mitee@4.0-service.rc

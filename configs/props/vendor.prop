@@ -143,11 +143,11 @@ ro.mtk_key_manager_support=1
 
 # Hardware
 ro.hardware.egl=meow
-ro.hardware.gatekeeper=beanpod
+ro.hardware.gatekeeper=mitee
 ro.hardware.gralloc=common
 ro.hardware.hwcomposer=mtk_common
-ro.hardware.kmsetkey=beanpod
 ro.hardware.vulkan=mali
+ro.vendor.mtk_mitee_support=1
 
 # LMKD
 ro.lmk.kill_timeout_ms=100
