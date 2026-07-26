@@ -45,16 +45,20 @@ TARGET_BOARD_PLATFORM := mt6789
 # Boot image
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-# Stock/vendor_boot fragments are LZ4; Xiaomi LK hangs on gzip (MI logo).
+# Stock/vendor_boot fragments are LZ4 legacy; Xiaomi LK hangs on gzip ramdisk.
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-# Stock boot.img ramdisk_size=0; first-stage lives in vendor_boot PLATFORM.
-# Lineage LZ4(vendor)+LZ4(generic boot) fails initramfs decode on this GKI.
-# Empty boot + merge of generic ramdisk into PLATFORM (see Android.mk).
+# Stock boot.img: ramdisk_size=0 + lz4_legacy kernel. First-stage lives in
+# vendor_boot PLATFORM (merged in Android.mk). Do not put generic ramdisk in
+# boot.img — LZ4(vendor)+LZ4(boot) fails initramfs decode on this GKI.
+# Prefer stock-compressed empty boot (lz4_legacy), not gzip Image.gz packaging.
 # Recovery still uses the separate RECOVERY fragment (not overwritten).
-BOARD_PREBUILT_BOOTIMAGE := $(KERNEL_PATH)/boot-empty-ramdisk.img
+BOARD_PREBUILT_BOOTIMAGE := $(KERNEL_PATH)/boot-stocklz4-empty.img
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
+# Do NOT add experimental ramoops/selinux cmdline here: on taiko those args
+# can prevent normal-boot kernel entry (MI logo, stale pstore) while recovery
+# still works from the same vendor_boot.
 
 # Match stock vendor_boot bootconfig (GKI 6.12)
 BOARD_BOOTCONFIG += kernel.rcu_nocbs=all
@@ -85,8 +89,9 @@ LOCAL_KERNEL := $(KERNEL_PATH)/Image.gz
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# DTB
+# DTB / DTBO (stock taiko; required for normal boot panel/DRM path)
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 
 # Kernel modules — exact layout from f55da29 (recovery UI worked with this).
 # All .ko in PLATFORM; recovery fragment has no BOARD_RECOVERY_KERNEL_MODULES.

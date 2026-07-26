@@ -260,14 +260,23 @@ else
 TAIKO_VENDOR_RAMDISK_CPIO := $(call intermediates-dir-for,PACKAGING,vendor_boot)/vendor_ramdisk.cpio.gz
 endif
 
-# Also wait for vendor_ramdisk fstab install so we do not pack a stale/missing
-# first_stage_ramdisk/fstab.mt6789 (stock first_stage reads that path).
+# Wait for fstab + vendor_ramdisk modules so merge cannot race ahead of .ko install.
 TAIKO_VENDOR_RAMDISK_FSTAB := $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789
+TAIKO_VENDOR_RAMDISK_MODULES_LOAD := $(TARGET_VENDOR_RAMDISK_OUT)/lib/modules/modules.load
 
-$(TAIKO_MERGE_VENDOR_RAMDISK_STAMP): $(filter $(TARGET_RAMDISK_OUT)/%,$(ALL_DEFAULT_INSTALLED_MODULES)) $(TAIKO_VENDOR_RAMDISK_FSTAB)
-	@echo "taiko: merge first-stage ramdisk into vendor_ramdisk"
+$(TAIKO_MERGE_VENDOR_RAMDISK_STAMP): $(filter $(TARGET_RAMDISK_OUT)/%,$(ALL_DEFAULT_INSTALLED_MODULES)) $(TAIKO_VENDOR_RAMDISK_FSTAB) $(TAIKO_VENDOR_RAMDISK_MODULES_LOAD)
+	@echo "taiko: merge first-stage ramdisk into vendor_ramdisk (normal boot)"
 	@mkdir -p $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc
+	@# Generic ramdisk must not clobber PLATFORM kernel modules (stock layout).
+	@rm -rf $(PRODUCT_OUT)/.taiko_vr_modules_bak
+	@if [ -d $(TARGET_VENDOR_RAMDISK_OUT)/lib/modules ]; then \
+		cp -a $(TARGET_VENDOR_RAMDISK_OUT)/lib/modules $(PRODUCT_OUT)/.taiko_vr_modules_bak; \
+	fi
 	@cp -a $(TARGET_RAMDISK_OUT)/. $(TARGET_VENDOR_RAMDISK_OUT)/
+	@if [ -d $(PRODUCT_OUT)/.taiko_vr_modules_bak ]; then \
+		rm -rf $(TARGET_VENDOR_RAMDISK_OUT)/lib/modules; \
+		mv $(PRODUCT_OUT)/.taiko_vr_modules_bak $(TARGET_VENDOR_RAMDISK_OUT)/lib/modules; \
+	fi
 	@# Force device fstab into stock + AOSP first_stage paths (ext4 for system*).
 	@cp -f $(DEVICE_PATH)/rootdir/etc/fstab.mt6789 \
 		$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789
@@ -275,8 +284,21 @@ $(TAIKO_MERGE_VENDOR_RAMDISK_STAMP): $(filter $(TARGET_RAMDISK_OUT)/%,$(ALL_DEFA
 		$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt6789
 	@cp -f $(DEVICE_PATH)/rootdir/etc/fstab.mt6789 \
 		$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/system/etc/fstab.mt8781
+	@# GSI AVB keys (fstab avb_keys=/avb/...).
+	@mkdir -p $(TARGET_VENDOR_RAMDISK_OUT)/avb
+	@for f in q-gsi.avbpubkey r-gsi.avbpubkey s-gsi.avbpubkey; do \
+		if [ -f $(TARGET_RAMDISK_OUT)/avb/$$f ]; then \
+			cp -f $(TARGET_RAMDISK_OUT)/avb/$$f $(TARGET_VENDOR_RAMDISK_OUT)/avb/$$f; \
+		elif [ -f $(PRODUCT_OUT)/system/etc/security/avb/$$f ]; then \
+			cp -f $(PRODUCT_OUT)/system/etc/security/avb/$$f $(TARGET_VENDOR_RAMDISK_OUT)/avb/$$f; \
+		fi; \
+	done
 	@test -e $(TARGET_VENDOR_RAMDISK_OUT)/init -o -e $(TARGET_VENDOR_RAMDISK_OUT)/system/bin/init
 	@test -s $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789
+	@test -n "$$(find $(TARGET_VENDOR_RAMDISK_OUT)/lib/modules -name '*.ko' 2>/dev/null | head -1)"
+	@# Guard against regressing to erofs-first system (reboots to bootloader on MI logo).
+	@! grep -q '^system /system erofs' $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789
+	@grep -q '^system /system ext4' $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789
 	@touch $@
 
 $(TAIKO_VENDOR_RAMDISK_CPIO): $(TAIKO_MERGE_VENDOR_RAMDISK_STAMP)
